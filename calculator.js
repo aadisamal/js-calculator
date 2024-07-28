@@ -1,31 +1,20 @@
-// input: num1 & num2
-let number1 = "pizza"
-let number2 = "donut"
-let operator = '+'
+// CALCULATOR PROGRAM
 
-if ( Number.isInteger(number1) && Number.isInteger(number2)) {
-// process calculation
-    switch(operator){
-        case '+' :
-            result = number1 + number2    
-            break;
-        case '-' :
-            result = number1 - number2
-            break;
-        case '*' :
-            result = number1 * number2
-            break;
-        case '%' :
-            result = number1 % number2
-            break;
-        default:
-            result = "invalid operator"
-        
+const display = document.getElementById("display");
+
+function appendToDisplay(input) {
+    display.value += input;
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function calculate() {
+    try{
+        display.value = eval(display.value);
     }
-    console.log(result)
+    catch(error){
+        display.value = "Error";
+    }
 }
-else {
-    console.log("not a number")
-}
-
-
